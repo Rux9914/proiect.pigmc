@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body 
+{font-family: Verdana, sans-serif;
+  background: radial-gradient(circle, rgba(238,174,202,0.8436624649859944) 40%, rgba(148,187,233,1) 52%);
+}
+
+* {box-sizing: border-box;}
+
+
+.navbar 
+{
+  width: 100%;
+  background-color: #b0eff7;
+  overflow: auto;
+  border-radius: 10px;
+}
+
+.navbar:hover
+{
+box-shadow: 10px 10px 5px lightblue;
+}
+
+.navbar a 
+{
+  float: left;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  color: black;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.navbar a:hover 
+{
+  background-color: #deb9c9;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px lightblue;
+}
+
+
+.active 
+{
+   background-color: #dfc1f0;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: black;
+  font-size: 35px;
+  padding-left: 10px;
+  padding-right:10px;
+  background-color: #b0eff7;
+  border-radius: 10px;
+}
+
+h1:hover{
+  background-color: #deb9c9;
+  box-shadow: 10px 10px 5px lightblue;
+}
+
+p {
+  text-indent: 50px;
+  text-align: justify;
+  font-size:20px;
+  padding-left: 10px;
+  padding-right:10px;
+  color: black;
+  background-color: #b0eff7;
+  border-radius: 10px;
+}
+
+input[type=text], select, textarea {
+  width: 90%;
+  padding: 12px;
+  border: 1px solid rgb(7, 0, 66);
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  background-color: #b0eff7;
+}
+
+input[type=submit] {
+  background-color: #dfc1f0; 
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #deb9c9;
+  box-shadow: 10px 10px 5px lightblue;
+}
+
+.container {
+  border-radius: 10px;
+  padding:30px;
+}
+
+
+</style>
+</head>
+<body>
+    <div class="navbar">
+       <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Despre</a> 
+       <a href="conversie.html"><i class="fa fa-fw fa-search"></i> Conversia valorilor electrice</a> 
+       <a href="quizz.html"><i class="fa fa-fw fa-envelope"></i> Quizz</a> 
+       <a href="contact.html"><i class="fa fa-fw fa-user"></i> Contact</a>
+      </div>
+      
+<h1>Formular de contact</h1>
+
+<div class="container">
+  <form>
+    <label for="fname">Nume:</label> <br>
+    <input type="text" id="fname" name="firstname" placeholder="Introduceti numele dvs."> <br>
+
+    <label for="lname">Prenume:</label> <br>
+    <input type="text" id="lname" name="lastname" placeholder="Introduceti prenumele dvs."> <br>
+
+    <label for="judet">Judet</label> <br>
+    <select id="judet" name="judet">
+      <option value="judetul">Alegeti Judetul</option>
+      <option value="alba">Alba</option>
+      <option value="arad">Arad</option>
+      <option value="arges">Arges</option>
+      <option value="bacau">Bacau</option>
+      <option value="bihor">Bihor</option>
+      <option value="bistrita-nasaud">Bistrita-Nasaud</option>
+      <option value="botosani">Botosani</option>
+      <option value="brasov">Brasov</option>
+      <option value="braila">Braila</option>
+      <option value="bucuresti">Bucuresti</option>
+      <option value="buzau">Buzau</option>
+      <option value="caras-severin">Caras-Severin</option>
+      <option value="calarasi">Calarasi</option>
+      <option value="cluj">Cluj</option>
+      <option value="constanta">Constanta</option>
+      <option value="covasna">Covasna</option>
+      <option value="dambovita">Dambovita</option>
+      <option value="dolj">Dolj</option>
+      <option value="galati">Galati</option>
+      <option value="giurgiu">Giurgiu</option>
+      <option value="gorj">Gorj</option>
+      <option value="targu-jiu">Targu Jiu</option>
+      <option value="harghita">Harghita</option>
+      <option value="hunedoara">Hunedoara</option>
+      <option value="ialomita">Ialomita</option>
+      <option value="iasi">Iasi</option>
+      <option value="ilfov">Ilfov</option>
+      <option value="maramures">Maramures</option>
+      <option value="mehedinti">Mehedinti</option>
+      <option value="mures">Mures</option>
+      <option value="neamt">Neamt</option>
+      <option value="olt">Olt</option>
+      <option value="prahova">Prahova</option>
+      <option value="satu-mare">Satu Mare</option>
+      <option value="salaj">Salaj</option>
+      <option value="sibiu">Sibiu</option>
+      <option value="suceava">suceava</option>
+      <option value="teleorman">Teleorman</option>
+      <option value="timis">Timis</option>
+      <option value="tulcea">Tulcea</option>
+      <option value="vaslui">Vaslui</option>
+      <option value="valcea">Valcea</option>
+      <option value="vrancea">Vrancea</option>
+
+    </select>
+    <br>
+    <label for="subject">Intrebari/Sugestii:</label><br>
+    <textarea id="subject" name="subject" placeholder="Intrebarile/Sugestiile dvs." style="height:200px"></textarea> <br>
+
+    <input type="submit" value="Submit" onclick=msg()>
+  </form>
+  <script> function msg() 
+    {
+        alert ("Datele au fost inregistrate");
+    }
+    </script>
+</div>
+
+</body>
+</html>

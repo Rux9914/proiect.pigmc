@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body 
+{font-family: Verdana, sans-serif;
+  background: radial-gradient(circle, rgba(238,174,202,0.8436624649859944) 40%, rgba(148,187,233,1) 52%);
+
+.navbar 
+{
+  width: 100%;
+  background-color: #b0eff7;
+  overflow: auto;
+  border-radius: 10px;
+}
+
+.navbar:hover
+{
+box-shadow: 10px 10px 5px lightblue;
+}
+
+.navbar a 
+{
+  float: left;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  color: black;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.navbar a:hover 
+{
+  background-color: #deb9c9;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px lightblue;
+}
+
+.active 
+{
+  background-color: #dfc1f0;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: black;
+  font-size: 35px;
+  padding-left: 10px;
+  padding-right:10px;
+  background-color: #b0eff7;
+  border-radius: 10px;
+}
+
+h1:hover{
+  background-color: #deb9c9;
+  box-shadow: 10px 10px 5px lightblue;
+}
+
+p {
+  text-indent: 50px;
+  text-align: justify;
+  font-size:20px;
+  padding-left: 10px;
+  padding-right:10px;
+  color: #00043b;
+}
+
+img 
+{
+
+  border-radius: 5px;
+}
+
+.convert
+{
+  background-color: #b0eff7;
+  border-radius: 10px;
+}
+
+.convert:hover{
+  background-color: #deb9c9;
+  box-shadow: 10px 10px 5px lightblue;
+}
+
+</style>
+
+   
+<body>
+
+<div class="navbar">
+  <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Despre</a> 
+  <a href="conversie.html"><i class="fa fa-fw fa-search"></i> Conversia valorilor electrice</a> 
+  <a href="quizz.html"><i class="fa fa-fw fa-envelope"></i> Quizz</a> 
+  <a href="contact.html"><i class="fa fa-fw fa-user"></i> Contact</a>
+</div>
+
+
+<h1> Conversie kVA->VA, kVA->W, VA->W </h1>
+
+<div class="convert">
+<p>
+    <label>Valoare kiloVolt-Amperi: </label>
+    <input id="1" type="text"  name="1" placeholder="Introduceti valoarea in kVA">
+    <label> kVA</label>
+</p>
+<p>
+    
+    <label >Formula de calcul pentru a transforma kVA in VA: </label>
+    <img src="kVA-VA.JPG" alt="formula kVA-VA" width="200" height="30">
+</p>
+<p>
+<input type="button" value= "Calculeaza kVA-VA" onclick="calcul()">  </input>
+    <label>Rezultatul in Volt-Amper: </label>
+    <span id="3" ></span>
+    <label> VA</label>
+    <br> <br>    
+</p>
+
+<p>
+    <label>Valoare kiloVolt-Amperi: </label>
+    <input id="11" type="text"  name="11" placeholder="Introduceti valoarea in kVA">
+    <label> kVA</label>
+</p>
+
+<p>
+    <label>Valoarea factorului de putere cosfi: </label>
+    <input id="12" type="text" name="12" placeholder="Introduceti valoarea cosfi">
+</p>
+
+<p>
+    <label >Formula de calcul a transformarii din kVA in Watt</label>
+    <img src="kva-w.JPG" alt="formula kVA-W" width="250" height="20">
+</p>
+
+<p>
+ <input type="button" value= "Calculeaza kVA-W" onclick="calcul1()">  </input>
+    <label>Rezultatul in Watt: </label>
+    <span id="13"></span>
+    <label> W</label>
+    <br> <br>  
+</p>
+
+<p>
+    <label>Valoare Volt-Amperi: </label>
+    <input id="21" type="text"  name="21" placeholder="Introduceti valoarea VA">
+    <label> VA</label>
+</p>
+<p>
+    <label>Valoarea factorului de putere cosfi: </label>
+    <input id="22" type="text" name="22" placeholder="Introduceti valoarea cosfi">
+</p>
+
+<p>
+    <label >Formula de calcul a transformarii din VA in W</label>
+    <img src="va-w.JPG" alt="formula VA-W" width="160" height="24">
+</p>
+
+<p>
+    <input type="button" value= "Calculeaza kVA-W" onclick="calcul2()">  </input>    
+    <label>Rezultatul in Watt: </label>
+    <span id="23"></span>
+    <label> W</label>
+    <br> <br>
+</p>
+</div>
+
+
+<script>
+    function calcul() 
+    {
+        var num1=document.getElementById('1').value;
+        var rezultat=parseInt(num1)*1000; console.log(rezultat);
+        document.getElementById('3').innerHTML=rezultat;
+    }
+</script>
+
+<script>
+    function calcul1() 
+    {
+        var num11=document.getElementById('11').value;
+        var num12=document.getElementById('12').value;
+        var rezultat1=parseInt(num11)*parseFloat(num12)*1000; console.log(rezultat1);
+        document.getElementById('13').innerHTML=rezultat1;
+    }
+</script>
+<script>
+    function calcul2() 
+    {
+        var num11=document.getElementById('21').value;
+        var num12=document.getElementById('22').value;
+        var rezultat1=parseInt(num11)*parseFloat(num12); console.log(rezultat1);
+        document.getElementById('23').innerHTML=rezultat1;
+    }
+</script>
+
+
+
+</body>
+</html> 

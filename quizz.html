@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body 
+  {font-family: Verdana, sans-serif;
+  background: radial-gradient(circle, rgba(238,174,202,0.8436624649859944) 40%, rgba(148,187,233,1) 52%);
+}
+    
+.navbar 
+{
+  width: 100%;
+  background-color: #b0eff7;
+  overflow: auto;
+  border-radius: 10px;
+}
+
+.navbar:hover
+{
+box-shadow: 10px 10px 5px lightblue;
+}
+
+.navbar a 
+{
+  float: left;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  color: black;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.navbar a:hover 
+{
+  background-color: #deb9c9;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px lightblue;
+}
+
+.active 
+{
+  background-color: #dfc1f0;
+  border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+  color: black;
+  font-size: 35px;
+  padding-left: 10px;
+  padding-right:10px;
+  background-color: #b0eff7;
+  border-radius: 10px;
+}
+
+h1:hover{
+  background-color: #deb9c9;
+  box-shadow: 10px 10px 5px lightblue;
+}
+
+p {
+  text-indent: 50px;
+  text-align: justify;
+  font-size:20px;
+  padding-left: 10px;
+  padding-right:10px;
+  color: black;
+  background-color: #b0eff7;
+  border-radius: 10px;
+}
+
+.quizz
+{
+  background-color: #b0eff7;
+  border-radius: 10px;
+}    
+    
+    </style>
+<head>
+    <title>Test de verificare a cunostintelor</title>
+</head>
+
+<body>
+    <div class="navbar">
+  <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Despre</a> 
+  <a href="conversie.html"><i class="fa fa-fw fa-search"></i> Conversia valorilor electrice</a> 
+  <a href="quizz.html"><i class="fa fa-fw fa-envelope"></i> Quizz</a> 
+  <a href="contact.html"><i class="fa fa-fw fa-user"></i> Contact</a>
+      </div>
+    <center><h1>Quizz recapitulativ</h1></center>
+
+<div class="quizz">
+<p>
+
+<form name="quizz">
+
+<p><b>
+<br>1. Care este formula de conversie din kVA in VA? <br></b>
+<blockquote>
+<p><input type="radio" name="q1" value="S(VA)=1000*S(kVA)">S(VA)=1000*S(kVA)<br></p>
+<p><input type="radio" name="q1" value="S(VA)=1000*S(kVA)*sin(fi)">S(VA)=1000*S(kVA)*sin(fi)<br></p>
+<p><input type="radio" name="q1" value="S(VA)=S(kVA)/1000">S(VA)=S(kVA)/1000<br></p>
+</blockquote>
+
+<p><b>
+<br>2. Care este formula de conversie din kVA in W?<br></b>
+<blockquote>
+<p><input type="radio" name="q2" value="P=S*PF/1000">P=S*PF/1000<br></p>
+<p><input type="radio" name="q2" value="P=S*PF*1000">P=S*PF*1000<br></p>
+<p><input type="radio" name="q2" value="P=S*PF">P=S*PF<br></p>
+</blockquote>
+
+<p><b>
+<br>3. Care este formula de conversie din VA in W?<br></b>
+<blockquote>
+    <p><input type="radio" name="q3" value="P=S*PF/1000">P=S*PF/1000<br></p>
+    <p><input type="radio" name="q3" value="P=S*PF*1000">P=S*PF*1000<br></p>
+    <p><input type="radio" name="q3" value="P=S*PF">P=S*PF<br></p>
+</blockquote>
+
+
+<p><b>
+<input type="button"value="Verificare"onClick="getScore(this.form);">
+<input type="reset" value="Stergere"><p>
+Raspunsuri corecte = <input type= text size 3 name= "mark">
+<p>
+Punctajul in procente = <input type=text size=3 name="percentage"><br>
+</p>
+</form>
+
+<p>
+
+<form method="post" name="Form" onsubmit="" action="">
+</form>
+</div>
+
+</body>
+
+<script>
+
+var numQues = 3;
+var numChoi = 3;
+var answers = new Array(5);
+answers[0] = "S(VA)=1000*S(kVA)";
+answers[1] = "P=S*PF*1000";
+answers[2] = "P=S*PF";
+
+function getScore(form) 
+{
+    var score = 0;
+    var currElt;
+    var currSelection;
+    for (i=0; i<numQues; i++)
+    {
+        currElt = i*numChoi;
+        answered=false;
+        for (j=0; j<numChoi; j++) 
+        {
+            currSelection = form.elements[currElt + j];
+            if (currSelection.checked) 
+            {
+                answered=true;
+                if (currSelection.value == answers[i]) 
+                {
+                    score++;
+                    break;
+                }
+            }
+        }
+        if (answered ===false){alert("Nu ati raspuns la toate intrebarile din quizz.") ;return false;}
+    }
+    var scoreper = Math.round(score/numQues*100);
+    form.percentage.value = scoreper + "%";
+    form.mark.value=score;
+}
+
+</script>
+
+</html>
