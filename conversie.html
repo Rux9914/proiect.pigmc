@@ -85,6 +85,7 @@ img
   box-shadow: 10px 10px 5px lightblue;
 }
 
+
 </style>
 
    
@@ -92,77 +93,93 @@ img
 
 <div class="navbar">
   <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Despre</a> 
-  <a href="conversie.html"><i class="fa fa-fw fa-search"></i> Conversia valorilor electrice</a> 
+  <a href="conversie.html"><i class="fa fa-fw fa-search"></i>Conversie/Calcule marimi electrice</a> 
   <a href="quizz.html"><i class="fa fa-fw fa-envelope"></i> Quizz</a> 
   <a href="contact.html"><i class="fa fa-fw fa-user"></i> Contact</a>
 </div>
 
 
-<h1> Conversie kVA->VA, kVA->W, VA->W </h1>
+<h1>Conversie/Calcule marimi electrice</h1>
 
 <div class="convert">
+<h2>Conversie BTU in kW</h2>
+
 <p>
-    <label>Valoare kiloVolt-Amperi: </label>
-    <input id="1" type="text"  name="1" placeholder="Introduceti valoarea in kVA">
-    <label> kVA</label>
+    <label>Valoare BTU: </label>
+    <input id="1" type="text"  name="1" placeholder="Introduceti valoarea in BTU">
+    <label> BTU</label>
 </p>
 <p>
     
-    <label >Formula de calcul pentru a transforma kVA in VA: </label>
-    <img src="kVA-VA.JPG" alt="formula kVA-VA" width="200" height="30">
+    <label >Formula de calcul pentru a transforma BTU in kW: </label>
+    <img src="BTU-kW.JPG" alt="formula BTU-kW" width="120" height="40">
 </p>
 <p>
-<input type="button" value= "Calculeaza kVA-VA" onclick="calcul()">  </input>
-    <label>Rezultatul in Volt-Amper: </label>
+<input type="button" value= "Converteste BTU-kW" onclick="calcul()">  </input>
+    <label>Rezultatul in kW: </label>
     <span id="3" ></span>
-    <label> VA</label>
+    <label> kW</label>
     <br> <br>    
 </p>
 
+<h2>Calculator putere activa in sistem trifazat</h2>
 <p>
-    <label>Valoare kiloVolt-Amperi: </label>
-    <input id="11" type="text"  name="11" placeholder="Introduceti valoarea in kVA">
-    <label> kVA</label>
+    <label>Valoarea tensiunii: </label>
+    <input id="11" type="text"  name="11" placeholder="Introduceti valoarea in V">
+    <label> V</label>
+</p>
+
+<p>
+    <label>Valoarea intensitatii curentului: </label>
+    <input id="12" type="text" name="12" placeholder="Introduceti valoarea in A">
+<label> A</label>
 </p>
 
 <p>
     <label>Valoarea factorului de putere cosfi: </label>
-    <input id="12" type="text" name="12" placeholder="Introduceti valoarea cosfi">
+    <input id="13" type="text" name="13" placeholder="Introduceti valoarea cosfi">
 </p>
 
 <p>
-    <label >Formula de calcul a transformarii din kVA in Watt</label>
-    <img src="kva-w.JPG" alt="formula kVA-W" width="250" height="20">
+    <label >Formula de calcul pentru puterea activa in sistem trifazat</label>
+    <img src="putere activa.png" alt="formula putere activa" width="150" height="50">
 </p>
 
 <p>
- <input type="button" value= "Calculeaza kVA-W" onclick="calcul1()">  </input>
-    <label>Rezultatul in Watt: </label>
-    <span id="13"></span>
-    <label> W</label>
+ <input type="button" value= "Calculeaza puterea activa" onclick="calcul1()">  </input>
+    <label>Rezultatul in kW: </label>
+    <span id="14"></span>
+    <label> kW</label>
     <br> <br>  
 </p>
 
+<h2>Calculator rezistivitate materiale</h2>
 <p>
-    <label>Valoare Volt-Amperi: </label>
-    <input id="21" type="text"  name="21" placeholder="Introduceti valoarea VA">
-    <label> VA</label>
+    <label>Valoare rezistenta: </label>
+    <input id="21" type="text" style='width:20%'  name="21" placeholder="Introduceti valoarea rezistentei in Ohm">
+    <label> Ohm</label>
 </p>
 <p>
-    <label>Valoarea factorului de putere cosfi: </label>
-    <input id="22" type="text" name="22" placeholder="Introduceti valoarea cosfi">
-</p>
-
-<p>
-    <label >Formula de calcul a transformarii din VA in W</label>
-    <img src="va-w.JPG" alt="formula VA-W" width="160" height="24">
+    <label>Valoarea ariei sectiunii transverale: </label>
+    <input id="22" type="text" style='width:23%' name="22" placeholder="Introduceti valoarea ariei sectiunii in m patrati">
+<label> m patrati</label>
 </p>
 
 <p>
-    <input type="button" value= "Calculeaza kVA-W" onclick="calcul2()">  </input>    
-    <label>Rezultatul in Watt: </label>
-    <span id="23"></span>
-    <label> W</label>
+    <label>Valoarea lungimii: </label>
+    <input id="23" type="text" name="23" placeholder="Introduceti valoarea lungimii in m">
+<label> m</label>
+</p>
+<p>
+    <label >Formula de calcul a rezistivitatii</label>
+    <img src="rho.JPG" alt="formula rezistivitate" width="130" height="50">
+</p>
+
+<p>
+    <input type="button" value= "Calculeaza rezistivitatea" onclick="calcul2()">  </input>    
+    <label>Rezultatul in Ohm*m: </label>
+    <span id="24"></span>
+    <label> Ohm*m</label>
     <br> <br>
 </p>
 </div>
@@ -172,7 +189,7 @@ img
     function calcul() 
     {
         var num1=document.getElementById('1').value;
-        var rezultat=parseInt(num1)*1000; console.log(rezultat);
+        var rezultat=parseInt(num1)/3412.14; console.log(rezultat);
         document.getElementById('3').innerHTML=rezultat;
     }
 </script>
@@ -182,17 +199,19 @@ img
     {
         var num11=document.getElementById('11').value;
         var num12=document.getElementById('12').value;
-        var rezultat1=parseInt(num11)*parseFloat(num12)*1000; console.log(rezultat1);
-        document.getElementById('13').innerHTML=rezultat1;
+        var num13=document.getElementById('13').value;
+        var rezultat1=parseInt(num11)*parseInt(num12)*parseFloat(num13)*1.73; console.log(rezultat1);
+        document.getElementById('14').innerHTML=rezultat1;
     }
 </script>
 <script>
     function calcul2() 
     {
-        var num11=document.getElementById('21').value;
-        var num12=document.getElementById('22').value;
-        var rezultat1=parseInt(num11)*parseFloat(num12); console.log(rezultat1);
-        document.getElementById('23').innerHTML=rezultat1;
+        var num21=document.getElementById('21').value;
+        var num22=document.getElementById('22').value;
+        var num23=document.getElementById('23').value;
+        var rezultat2=parseFloat(num21)*(parseFloat(num22)/parseFloat(num23)); console.log(rezultat2);
+        document.getElementById('24').innerHTML=rezultat2;
     }
 </script>
 

@@ -83,12 +83,13 @@ p {
 </head>
 
 <body>
-    <div class="navbar">
+<div class="navbar">
   <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Despre</a> 
-  <a href="conversie.html"><i class="fa fa-fw fa-search"></i> Conversia valorilor electrice</a> 
+  <a href="conversie.html"><i class="fa fa-fw fa-search"></i>Conversie/Calcule marimi electrice</a> 
   <a href="quizz.html"><i class="fa fa-fw fa-envelope"></i> Quizz</a> 
   <a href="contact.html"><i class="fa fa-fw fa-user"></i> Contact</a>
-      </div>
+</div>
+
     <center><h1>Quizz recapitulativ</h1></center>
 
 <div class="quizz">
@@ -97,29 +98,44 @@ p {
 <form name="quizz">
 
 <p><b>
-<br>1. Care este formula de conversie din kVA in VA? <br></b>
+<br>1. Care este formula de calcul pentru legarea in serie a unor rezistori? <br></b>
 <blockquote>
-<p><input type="radio" name="q1" value="S(VA)=1000*S(kVA)">S(VA)=1000*S(kVA)<br></p>
-<p><input type="radio" name="q1" value="S(VA)=1000*S(kVA)*sin(fi)">S(VA)=1000*S(kVA)*sin(fi)<br></p>
-<p><input type="radio" name="q1" value="S(VA)=S(kVA)/1000">S(VA)=S(kVA)/1000<br></p>
+<p><input type="radio" name="q1" value="Rt=R1+R2+...+Rn">Rt=R1+R2+...+Rn<br></p>
+<p><input type="radio" name="q1" value="Rt=(R1*R2*...*Rn)/Rn">Rt=(R1*R2*...*Rn)/Rn<br></p>
+<p><input type="radio" name="q1" value="Rt=R1/Rn">Rt=R1/Rn<br></p>
 </blockquote>
 
 <p><b>
-<br>2. Care este formula de conversie din kVA in W?<br></b>
+<br>2. Care este legea lui Ohm?<br></b>
 <blockquote>
-<p><input type="radio" name="q2" value="P=S*PF/1000">P=S*PF/1000<br></p>
-<p><input type="radio" name="q2" value="P=S*PF*1000">P=S*PF*1000<br></p>
-<p><input type="radio" name="q2" value="P=S*PF">P=S*PF<br></p>
+<p><input type="radio" name="q2" value="R=U*I*cosfi">R=U*I*cosfi<br></p>
+<p><input type="radio" name="q2" value="I=R/U">I=R/U<br></p>
+<p><input type="radio" name="q2" value="U=R*I">U=R*I<br></p>
 </blockquote>
 
 <p><b>
-<br>3. Care este formula de conversie din VA in W?<br></b>
+<br>3. Care este legea inductiei electromagnetice?<br></b>
 <blockquote>
-    <p><input type="radio" name="q3" value="P=S*PF/1000">P=S*PF/1000<br></p>
-    <p><input type="radio" name="q3" value="P=S*PF*1000">P=S*PF*1000<br></p>
-    <p><input type="radio" name="q3" value="P=S*PF">P=S*PF<br></p>
+    <p><input type="radio" name="q3" value="e=b*l*V">e=b*l*V<br></p>
+    <p><input type="radio" name="q3" value="e=B*l*v">e=B*l*v<br></p>
+    <p><input type="radio" name="q3" value="E=b*l*v">E=b*l*v<br></p>
 </blockquote>
 
+<p><b>
+<br>4. Care este factorul de putere considerat in Romania?<br></b>
+<blockquote>
+    <p><input type="radio" name="q4" value="cosfi=0.92">cosfi=0.92<br></p>
+    <p><input type="radio" name="q4" value="cosfi=1">cosfi=1<br></p>
+    <p><input type="radio" name="q4" value="cosfi=90">cosfi=90<br></p>
+</blockquote>
+
+<p><b>
+<br>5. Care este valoarea tensiunii de faza in un sistem trifazat?<br></b>
+<blockquote>
+    <p><input type="radio" name="q5" value="U=200V">U=200V<br></p>
+    <p><input type="radio" name="q5" value="U=400V">U=400V<br></p>
+    <p><input type="radio" name="q5" value="U=380V">U=380V<br></p>
+</blockquote>
 
 <p><b>
 <input type="button"value="Verificare"onClick="getScore(this.form);">
@@ -140,12 +156,14 @@ Punctajul in procente = <input type=text size=3 name="percentage"><br>
 
 <script>
 
-var numQues = 3;
+var numQues = 5;
 var numChoi = 3;
 var answers = new Array(5);
-answers[0] = "S(VA)=1000*S(kVA)";
-answers[1] = "P=S*PF*1000";
-answers[2] = "P=S*PF";
+answers[0] = "Rt=R1+R2+...+Rn";
+answers[1] = "U=R*I";
+answers[2] = "e=B*l*v";
+answers[3] = "cosfi=0.92";
+answers[4] = "U=400V";
 
 function getScore(form) 
 {
